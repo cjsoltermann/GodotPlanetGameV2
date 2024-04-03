@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqun4d7fe37j"]
+
+[ext_resource type="Shader" path="res://world.gdshader" id="1_7ux31"]
+[ext_resource type="Script" path="res://planet.gd" id="1_i45do"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3outb"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_7ux31")
+shader_parameter/color = Color(0.415686, 0.196078, 0.721569, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_48lr5"]
+radius = 20.0
+
+[node name="Planet" type="AnimatableBody3D"]
+script = ExtResource("1_i45do")
+mass = 25
+
+[node name="Mesh" type="CSGSphere3D" parent="."]
+radius = 20.0
+radial_segments = 20
+rings = 20
+material = SubResource("ShaderMaterial_3outb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_48lr5")

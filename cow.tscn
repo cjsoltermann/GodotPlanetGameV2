@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://dy0mij61b46iv"]
+
+[ext_resource type="Script" path="res://cow.gd" id="1_fq1em"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bbo8m"]
+radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uced1"]
+albedo_color = Color(0.286275, 0.286275, 0.286275, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j0l86"]
+albedo_color = Color(0.956863, 0.811765, 0.952941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i1uky"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmvkw"]
+transparency = 1
+albedo_color = Color(0.639216, 0.639216, 0.639216, 0.517647)
+
+[node name="Cow" type="CharacterBody3D" groups=["PickUp"]]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_fq1em")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_bbo8m")
+
+[node name="Body" type="Node3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Mesh" type="CSGSphere3D" parent="Body"]
+radial_segments = 16
+rings = 12
+
+[node name="Legs" type="Node3D" parent="Body"]
+
+[node name="FrontLeftMesh" type="CSGSphere3D" parent="Body/Legs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.4, -0.2)
+radius = 0.1
+material = SubResource("StandardMaterial3D_uced1")
+
+[node name="BackLeftMesh" type="CSGSphere3D" parent="Body/Legs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, -0.4, -0.2)
+radius = 0.1
+material = SubResource("StandardMaterial3D_uced1")
+
+[node name="BackRightMesh" type="CSGSphere3D" parent="Body/Legs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, -0.4, 0.2)
+radius = 0.1
+material = SubResource("StandardMaterial3D_uced1")
+
+[node name="FrontRightMesh" type="CSGSphere3D" parent="Body/Legs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.4, 0.2)
+radius = 0.1
+material = SubResource("StandardMaterial3D_uced1")
+
+[node name="Head" type="Node3D" parent="Body"]
+
+[node name="Mesh" type="CSGSphere3D" parent="Body/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.464266, 0.1788, 0)
+radius = 0.249217
+material = SubResource("StandardMaterial3D_j0l86")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Body/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.654478, 0.274, 0.067)
+size = Vector3(0.05, 0.05, 0.05)
+material = SubResource("StandardMaterial3D_i1uky")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Body/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.654478, 0.274, -0.0949232)
+size = Vector3(0.05, 0.05, 0.05)
+material = SubResource("StandardMaterial3D_i1uky")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Body/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.691359, 0.17286, -0.0188542)
+size = Vector3(0.05, 0.0475952, 0.224707)
+material = SubResource("StandardMaterial3D_i1uky")
+
+[node name="Helmet" type="CSGSphere3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.464266, 0.1788, 0)
+radius = 0.388067
+radial_segments = 16
+rings = 12
+material = SubResource("StandardMaterial3D_jmvkw")
