@@ -4,7 +4,6 @@ extends CharacterBody3D
 @onready var head: Node3D = $Body/Neck/Head
 @onready var camera: Camera3D = $Body/Neck/Head/Camera3D
 @onready var body: Node3D = $Body
-@onready var inside_stuff: Node3D = $Body/Neck/Head/Camera3D/InsideRightArm
 @onready var shoot_raycast: RayCast3D = $Body/Neck/Head/Camera3D/ShootRayCast
 @onready var pickup_raycast: RayCast3D = $Body/Neck/Head/Camera3D/PickUpRayCast
 
@@ -31,6 +30,10 @@ var get_closest_body: Callable
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+func _process(delta):
+	if Input.is_action_pressed("Shoot"):
+		shoot()
 
 func _physics_process(_delta):
 	apply_floor_snap()
@@ -45,7 +48,7 @@ func _physics_process(_delta):
 		var new_x := up_direction.cross(basis.z)
 		var new_z := new_x.cross(up_direction)
 		var new_quat := Basis(new_x, up_direction, new_z).get_rotation_quaternion()
-		quaternion = quaternion.slerp(new_quat, 0.05)
+		quaternion = quaternion.slerp(new_quat, 0.25)
 
 	velocity -= basis.x * velocity.dot(basis.x)
 	velocity -= basis.z * velocity.dot(basis.z)
@@ -145,9 +148,11 @@ func _input(event):
 		else:
 			crosshair_1.color = Color.WHITE
 			crosshair_2.color = Color.WHITE
-		
-	elif event.is_action_pressed("Shoot") and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		shoot()
+	elif event is InputEventMouseButton and Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		#
+	#elif event.is_action_pressed("Shoot") and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		#shoot()
 		
 	elif event.is_action_pressed("Pick Up") and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		try_pickup()
