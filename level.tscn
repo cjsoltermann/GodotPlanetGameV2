@@ -488,16 +488,244 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.0395, 24.6319, -113.482)
 [node name="Aliens" type="Node3D" parent="Bodies"]
 
 [node name="Alien" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36127, 27.6376, -18.1238)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36127, 27.6376, 140.118)
 
 [node name="Alien2" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9599, 27.6376, -18.1238)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9599, 27.6376, 140.118)
 
 [node name="Alien3" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36127, 27.6376, -8.35918)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36127, 27.6376, 149.882)
 
 [node name="Alien4" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8461, 27.6376, -4.42163)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8461, 27.6376, 153.82)
+
+[node name="Alien5" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36127, 27.6376, 170.545)
+
+[node name="Alien6" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9599, 27.6376, 170.545)
+
+[node name="Alien7" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36127, 27.6376, 180.309)
+
+[node name="Alien8" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8461, 27.6376, 184.247)
+
+[node name="Alien9" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36127, 27.6376, 197.153)
+
+[node name="Alien10" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9599, 27.6376, 197.153)
+
+[node name="Alien11" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36127, 27.6376, 206.917)
+
+[node name="Alien12" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8461, 27.6376, 210.855)
+
+[node name="Alien13" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.3892, 27.6376, 197.153)
+
+[node name="Alien14" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.9878, 27.6376, 197.153)
+
+[node name="Alien15" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.3892, 27.6376, 206.917)
+
+[node name="Alien16" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.874, 27.6376, 210.855)
+
+[node name="Alien17" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.3892, 27.6376, 163.864)
+
+[node name="Alien18" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.9878, 27.6376, 163.864)
+
+[node name="Alien19" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.3892, 27.6376, 173.628)
+
+[node name="Alien20" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.874, 27.6376, 177.566)
+
+[node name="Alien21" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.3892, 27.6376, 129.864)
+
+[node name="Alien22" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.9878, 27.6376, 129.864)
+
+[node name="Alien23" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.3892, 27.6376, 139.628)
+
+[node name="Alien24" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.874, 27.6376, 143.566)
+
+[node name="Alien25" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.96, 27.6376, 290.261)
+
+[node name="Alien26" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.559, 27.6376, 290.261)
+
+[node name="Alien27" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.96, 27.6376, 300.025)
+
+[node name="Alien28" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.445, 27.6376, 303.963)
+
+[node name="Alien29" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.96, 27.6376, 320.687)
+
+[node name="Alien30" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.559, 27.6376, 320.687)
+
+[node name="Alien31" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.96, 27.6376, 330.452)
+
+[node name="Alien32" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.445, 27.6376, 334.389)
+
+[node name="Alien33" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.96, 27.6376, 347.296)
+
+[node name="Alien34" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.559, 27.6376, 347.296)
+
+[node name="Alien35" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.96, 27.6376, 357.06)
+
+[node name="Alien36" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.445, 27.6376, 360.998)
+
+[node name="Alien37" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.988, 27.6376, 347.296)
+
+[node name="Alien38" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.587, 27.6376, 347.296)
+
+[node name="Alien39" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.988, 27.6376, 357.06)
+
+[node name="Alien40" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.473, 27.6376, 360.998)
+
+[node name="Alien41" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.988, 27.6376, 314.006)
+
+[node name="Alien42" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.587, 27.6376, 314.006)
+
+[node name="Alien43" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.988, 27.6376, 323.771)
+
+[node name="Alien44" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.473, 27.6376, 327.709)
+
+[node name="Alien45" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.988, 27.6376, 280.006)
+
+[node name="Alien46" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.587, 27.6376, 280.006)
+
+[node name="Alien47" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.988, 27.6376, 289.771)
+
+[node name="Alien48" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.473, 27.6376, 293.709)
+
+[node name="Alien49" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.96, 27.6376, 36.7047)
+
+[node name="Alien50" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.559, 27.6376, 36.7047)
+
+[node name="Alien51" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.96, 27.6376, 46.4693)
+
+[node name="Alien52" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.445, 27.6376, 50.4068)
+
+[node name="Alien53" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.96, 27.6376, 67.1314)
+
+[node name="Alien54" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.559, 27.6376, 67.1314)
+
+[node name="Alien55" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.96, 27.6376, 76.8961)
+
+[node name="Alien56" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.445, 27.6376, 80.8336)
+
+[node name="Alien57" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.96, 27.6376, 93.7397)
+
+[node name="Alien58" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.559, 27.6376, 93.7397)
+
+[node name="Alien59" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.96, 27.6376, 103.504)
+
+[node name="Alien60" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 144.445, 27.6376, 107.442)
+
+[node name="Alien61" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.988, 27.6376, 93.7397)
+
+[node name="Alien62" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.587, 27.6376, 93.7397)
+
+[node name="Alien63" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.988, 27.6376, 103.504)
+
+[node name="Alien64" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.473, 27.6376, 107.442)
+
+[node name="Alien65" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.988, 27.6376, 60.4506)
+
+[node name="Alien66" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.587, 27.6376, 60.4506)
+
+[node name="Alien67" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.988, 27.6376, 70.2152)
+
+[node name="Alien68" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.473, 27.6376, 74.1527)
+
+[node name="Alien69" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.988, 27.6376, 26.4506)
+
+[node name="Alien70" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.587, 27.6376, 26.4506)
+
+[node name="Alien71" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.988, 27.6376, 36.2152)
+
+[node name="Alien72" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.473, 27.6376, 40.1527)
+
+[node name="Alien73" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -181.736, 27.6376, 36.7047)
+
+[node name="Alien74" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -175.138, 27.6376, 36.7047)
+
+[node name="Alien75" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -181.736, 27.6376, 46.4693)
+
+[node name="Alien76" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -171.252, 27.6376, 50.4068)
+
+[node name="Alien77" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -181.736, 27.6376, 67.1314)
+
+[node name="Alien78" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -175.138, 27.6376, 67.1314)
+
+[node name="Alien79" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -181.736, 27.6376, 76.8961)
+
+[node name="Alien80" parent="Bodies/Aliens" instance=ExtResource("4_c2kvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -171.252, 27.6376, 80.8336)
 
 [node name="DebugCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.3402, 59.341, 0)

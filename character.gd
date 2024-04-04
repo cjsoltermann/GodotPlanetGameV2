@@ -48,7 +48,7 @@ func _physics_process(_delta):
 		var new_x := up_direction.cross(basis.z)
 		var new_z := new_x.cross(up_direction)
 		var new_quat := Basis(new_x, up_direction, new_z).get_rotation_quaternion()
-		quaternion = quaternion.slerp(new_quat, 0.25)
+		quaternion = quaternion.slerp(new_quat, 0.05)
 
 	velocity -= basis.x * velocity.dot(basis.x)
 	velocity -= basis.z * velocity.dot(basis.z)
@@ -59,7 +59,7 @@ func _physics_process(_delta):
 	else:
 		cur_speed = speed
 	
-	var dir := basis * body.basis * dir
+	var dir := basis * body.basis * dir.normalized()
 	
 	dir *= cur_speed
 	velocity += dir
@@ -82,6 +82,7 @@ func head_move(delta_x: float, delta_y: float):
 	body.orthonormalize()
 	
 func shoot():
+	camera.add_trauma(0.2)
 	if shoot_raycast.is_colliding():
 		var obj = shoot_raycast.get_collider()
 		if "on_hit" in obj:
