@@ -1,6 +1,7 @@
-[gd_scene load_steps=50 format=3 uid="uid://b1jpkuvmjv0nt"]
+[gd_scene load_steps=51 format=3 uid="uid://b1jpkuvmjv0nt"]
 
 [ext_resource type="Script" path="res://alien.gd" id="1_bfbw0"]
+[ext_resource type="PackedScene" uid="uid://rtljyc5ektuj" path="res://point_popup.tscn" id="2_1ve07"]
 [ext_resource type="Texture2D" uid="uid://42vjkckxn7lr" path="res://explosion_01_strip13.png" id="2_kf36u"]
 [ext_resource type="Texture2D" uid="uid://bhndm8v7stywv" path="res://explosion_02_strip13.png" id="3_lfgy3"]
 [ext_resource type="Texture2D" uid="uid://bfv5tn8j4iu0g" path="res://explosion_03_strip13.png" id="4_rm2xd"]
@@ -348,6 +349,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0244141, -0.743715, -0.0936
 operation = 2
 size = Vector3(4.05, 1, 4.352)
 material = SubResource("StandardMaterial3D_o5uhy")
+
+[node name="PointPopup" parent="." instance=ExtResource("2_1ve07")]
 
 [node name="Explosion" type="AnimatedSprite3D" parent="."]
 visible = false

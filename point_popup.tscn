@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://rtljyc5ektuj"]
+
+[ext_resource type="FontFile" uid="uid://c3nkyk6corfes" path="res://joystix monospace.otf" id="1_dsot2"]
+
+[sub_resource type="Curve" id="Curve_7ip1x"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_j3pej"]
+curve = SubResource("Curve_7ip1x")
+
+[sub_resource type="Curve" id="Curve_neg82"]
+_data = [Vector2(0.637681, 0.384615), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_yskov"]
+curve_y = SubResource("Curve_neg82")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_316ve"]
+directional_velocity_min = 1.0
+directional_velocity_max = 1.0
+directional_velocity_curve = SubResource("CurveXYZTexture_yskov")
+gravity = Vector3(0, 0, 0)
+color = Color(1, 0.0941176, 0.0862745, 1)
+alpha_curve = SubResource("CurveTexture_j3pej")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ymdk"]
+transparency = 4
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="TextMesh" id="TextMesh_08p3j"]
+material = SubResource("StandardMaterial3D_7ymdk")
+text = "20"
+font = ExtResource("1_dsot2")
+font_size = 127
+pixel_size = 0.05
+depth = 0.0
+
+[node name="PointPopup" type="GPUParticles3D"]
+emitting = false
+amount = 1
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_316ve")
+draw_pass_1 = SubResource("TextMesh_08p3j")

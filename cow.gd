@@ -48,10 +48,10 @@ func _physics_process(_delta):
 		velocity += basis.z * dir.y
 	
 	move_and_slide()
-	
+
 func hop():
 	velocity += jump_power * basis.y
-	
+
 func on_hit():
 	hop()
 

@@ -13,6 +13,7 @@ var target: Node3D
 var anchor_planet: Planet
 
 @onready var explosion = $Explosion
+@onready var popup: GPUParticles3D = $PointPopup
 @onready var ship = $Ship
 @onready var collider = $CollisionShape3D
 
@@ -44,6 +45,7 @@ func on_hit():
 		ship.hide()
 		explosion.show()
 		explosion.play("explosion" + str(randi_range(1,3)))
+		popup.emitting = true
 		collider.queue_free()
 		dead = true
 
