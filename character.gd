@@ -7,6 +7,8 @@ extends CharacterBody3D
 @onready var shoot_raycast: RayCast3D = $Body/Neck/Head/Camera3D/ShootRayCast
 @onready var pickup_raycast: RayCast3D = $Body/Neck/Head/Camera3D/PickUpRayCast
 
+@onready var muzzle_flash: GPUParticles3D = $Body/Neck/Head/Camera3D/AR70/GPUParticles3D
+
 @onready var crosshair_1: ColorRect = $ColorRect
 @onready var crosshair_2: ColorRect = $ColorRect2
 
@@ -83,6 +85,7 @@ func head_move(delta_x: float, delta_y: float):
 	
 func shoot():
 	camera.add_trauma(0.2)
+	muzzle_flash.emitting = true
 	if shoot_raycast.is_colliding():
 		var obj = shoot_raycast.get_collider()
 		if "on_hit" in obj:
