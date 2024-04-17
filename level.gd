@@ -11,6 +11,10 @@ var character_scene := preload("res://character.tscn")
 var swarm_center := Vector3.ZERO
 var swarm_velocity := Vector3.ZERO
 
+const X_BOUND = 150
+const Y_BOUND = 150
+const Z_BOUND = 150
+
 func _physics_process(delta):
 	var a := Vector3.ZERO
 	var b := Vector3.ZERO
@@ -35,22 +39,19 @@ func get_swarm_velocity(pos: Vector3, cur_velocity: Vector3) -> Vector3:
 	
 	var ret = cur_velocity + (separation + (cohesion / 10.0) + (alignment / 8.0)) / 10.0
 	
-	var max_x = 150
-	var max_y = 150
-	var max_z = 150
 	var correction = 20
 	
-	if pos.x > max_x:
+	if pos.x > X_BOUND:
 		ret.x = ret.x - correction
-	if pos.x < -max_x:
+	if pos.x < -X_BOUND:
 		ret.x = ret.x + correction
-	if pos.y > max_y:
+	if pos.y > Y_BOUND:
 		ret.y = ret.y - correction
-	if pos.y < -max_y:
+	if pos.y < -Y_BOUND:
 		ret.y = ret.y + correction
-	if pos.z > max_z:
+	if pos.z > Z_BOUND:
 		ret.z = ret.z - correction
-	if pos.z < -max_z:
+	if pos.z < -Z_BOUND:
 		ret.z = ret.z + correction
 	
 	return ret
