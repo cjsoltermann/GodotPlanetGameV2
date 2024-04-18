@@ -12,8 +12,12 @@ extends CharacterBody3D
 @onready var crosshair_1: ColorRect = $ColorRect
 @onready var crosshair_2: ColorRect = $ColorRect2
 
+@onready var noise = FastNoiseLite.new()
+var recoil_noise_y := 0
+
 @export var dir := Vector3.ZERO
 @export var sprinting := false
+var knockback := 0
 
 @export var speed := 10
 @export var sprint_speed := 20
@@ -36,6 +40,9 @@ func _ready():
 func _process(delta):
 	if Input.is_action_pressed("Shoot"):
 		shoot()
+		knockback = 5
+	else:
+		knockback = 0
 
 func _physics_process(_delta):
 	apply_floor_snap()
@@ -66,6 +73,9 @@ func _physics_process(_delta):
 	dir *= cur_speed
 	velocity += dir
 	
+	if is_on_floor():
+		velocity += basis * body.basis * Vector3.FORWARD * knockback
+	
 	move_and_slide()
 	
 	if is_on_floor():
@@ -83,13 +93,22 @@ func head_move(delta_x: float, delta_y: float):
 	head.rotate_x(delta_y / 150.0)
 	body.orthonormalize()
 	
+func add_recoil(amount):
+	recoil_noise_y += 25
+	head.rotation.x -= amount * (noise.get_noise_2d(noise.seed*2, recoil_noise_y) + 1)
+	
 func shoot():
 	camera.add_trauma(0.2)
+	add_recoil(0.01)
 	muzzle_flash.emitting = true
 	if shoot_raycast.is_colliding():
 		var obj = shoot_raycast.get_collider()
 		if "on_hit" in obj:
 			obj.on_hit()
+	if not is_on_floor():
+		velocity += head.global_basis * Vector3.FORWARD * 0.2
+			
+	#dir -= basis * body.basis * Vector3.FORWARD * 100
 			
 func try_pickup():
 	if not picking_up and pickup_raycast.is_colliding():

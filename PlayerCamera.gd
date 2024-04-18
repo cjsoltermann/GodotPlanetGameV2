@@ -12,6 +12,7 @@ var noise_y = 0
 
 func add_trauma(amount):
 	trauma = min(trauma + amount, 1.0)
+	
 
 
 func _process(delta):
