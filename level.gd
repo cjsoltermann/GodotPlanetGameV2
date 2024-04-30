@@ -4,6 +4,7 @@ var character_scene := preload("res://character.tscn")
 @onready var player_root := $Players
 @onready var body_root := $Bodies
 @onready var cows := $Bodies/Cows
+@onready var cowScene := preload("res://cow.tscn")
 @onready var aliens := $Bodies/Aliens
 
 @onready var planets: Node3D = $Planets
@@ -91,12 +92,28 @@ func get_closest_target(pos: Vector3) -> Node3D:
 		return ret
 	else:
 		return null
+		
+func spawn_sheep(n: int):
+	if planets.get_child_count() > 0:
+		for _i in range(n):
+			for planet: Planet in planets.get_children():
+				var theta = randf() * 2*PI - PI
+				var phi = randf() * 4*PI - 2*PI
+				var offset = Vector3(planet.radius * sin(theta) * cos(phi),
+									   planet.radius * sin(theta) * sin(phi),
+									   planet.radius * cos(theta))
+				var position = planet.position + offset
+				var newCow := cowScene.instantiate()
+				newCow.position = position
+				cows.add_child(newCow)
 
 func _ready():
 	var character = character_scene.instantiate()
 	character.get_gravity = get_gravity
 	character.get_closest_body = get_closest_body
 	player_root.add_child(character, true)
+	
+	spawn_sheep(30)
 
 	for body_group in body_root.get_children():
 		for body in body_group.get_children():

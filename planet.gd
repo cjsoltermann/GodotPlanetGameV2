@@ -11,6 +11,7 @@ extends AnimatableBody3D
 @export var orbiting := false
 @export var orbit_speed := 50.0
 @export var mass := 50
+var radius := 20
 
 var velocity := Vector3()
 
