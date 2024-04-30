@@ -573,4 +573,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -171.252, 27.6376, 80.8336)
 
 [node name="DebugCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.3402, 59.341, 0)
+current = true
 script = ExtResource("4_02awh")

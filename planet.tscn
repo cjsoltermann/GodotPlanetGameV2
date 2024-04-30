@@ -1,13 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqun4d7fe37j"]
+[gd_scene load_steps=9 format=3 uid="uid://cqun4d7fe37j"]
 
 [ext_resource type="Shader" path="res://world.gdshader" id="1_7ux31"]
 [ext_resource type="Script" path="res://planet.gd" id="1_i45do"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wo26e"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2qsiu"]
+seamless = true
+noise = SubResource("FastNoiseLite_wo26e")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_61wl2"]
+frequency = 0.05
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jc8pn"]
+noise = SubResource("FastNoiseLite_61wl2")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3outb"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("1_7ux31")
 shader_parameter/color = Color(0.415686, 0.196078, 0.721569, 1)
+shader_parameter/noise = SubResource("NoiseTexture2D_2qsiu")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_jc8pn")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_48lr5"]
 radius = 20.0

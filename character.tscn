@@ -19,6 +19,9 @@ sky_material = SubResource("PanoramaSkyMaterial_ojvp1")
 [sub_resource type="Environment" id="Environment_3bgt3"]
 background_mode = 2
 sky = SubResource("Sky_isu2r")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.5
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8temu"]
 angle_min = -360.0
