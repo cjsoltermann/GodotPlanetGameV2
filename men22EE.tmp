@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://be7blmq32cg38"]
+
+[ext_resource type="Texture2D" uid="uid://7bo35hisyuyy" path="res://panorama_image1.png" id="1_8eb8h"]
+[ext_resource type="Script" path="res://menu.gd" id="1_d14xe"]
+[ext_resource type="Theme" uid="uid://dklgackvxypsd" path="res://UITheme.tres" id="2_sjci2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vai8v"]
+font_size = 57
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d14xe")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -69.0
+offset_right = 1280.0
+offset_bottom = 817.0
+texture = ExtResource("1_8eb8h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_sjci2")
+text = "Ovium
+"
+label_settings = SubResource("LabelSettings_vai8v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Play" type="Button" parent="VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_sjci2")
+text = "Play"
+
+[node name="Quit" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_sjci2")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

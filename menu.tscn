@@ -1,0 +1,156 @@
+[gd_scene load_steps=10 format=3 uid="uid://be7blmq32cg38"]
+
+[ext_resource type="Texture2D" uid="uid://7bo35hisyuyy" path="res://panorama_image1.png" id="1_8eb8h"]
+[ext_resource type="Script" path="res://menu.gd" id="1_d14xe"]
+[ext_resource type="Theme" uid="uid://dklgackvxypsd" path="res://UITheme.tres" id="2_sjci2"]
+[ext_resource type="Script" path="res://menuSheep.gd" id="3_os4cg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qh6h3"]
+albedo_color = Color(0.286275, 0.286275, 0.286275, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u8tml"]
+albedo_color = Color(0.956863, 0.811765, 0.952941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s8rav"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dtgnj"]
+transparency = 1
+albedo_color = Color(0.639216, 0.639216, 0.639216, 0.517647)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vai8v"]
+font_size = 57
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d14xe")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -69.0
+offset_right = 1280.0
+offset_bottom = 817.0
+texture = ExtResource("1_8eb8h")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -512.0
+offset_top = -512.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.59333)
+
+[node name="Body" type="Node3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 0, 0, 0)
+script = ExtResource("3_os4cg")
+
+[node name="Mesh" type="CSGSphere3D" parent="SubViewportContainer/SubViewport/Body"]
+radial_segments = 16
+rings = 12
+
+[node name="Legs" type="Node3D" parent="SubViewportContainer/SubViewport/Body"]
+
+[node name="FrontLeftMesh" type="CSGSphere3D" parent="SubViewportContainer/SubViewport/Body/Legs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.4, -0.2)
+radius = 0.1
+material = SubResource("StandardMaterial3D_qh6h3")
+
+[node name="BackLeftMesh" type="CSGSphere3D" parent="SubViewportContainer/SubViewport/Body/Legs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, -0.4, -0.2)
+radius = 0.1
+material = SubResource("StandardMaterial3D_qh6h3")
+
+[node name="BackRightMesh" type="CSGSphere3D" parent="SubViewportContainer/SubViewport/Body/Legs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, -0.4, 0.2)
+radius = 0.1
+material = SubResource("StandardMaterial3D_qh6h3")
+
+[node name="FrontRightMesh" type="CSGSphere3D" parent="SubViewportContainer/SubViewport/Body/Legs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.4, 0.2)
+radius = 0.1
+material = SubResource("StandardMaterial3D_qh6h3")
+
+[node name="Head" type="Node3D" parent="SubViewportContainer/SubViewport/Body"]
+
+[node name="Mesh" type="CSGSphere3D" parent="SubViewportContainer/SubViewport/Body/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.464266, 0.1788, 0)
+radius = 0.249217
+material = SubResource("StandardMaterial3D_u8tml")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SubViewportContainer/SubViewport/Body/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.654478, 0.274, 0.067)
+size = Vector3(0.05, 0.05, 0.05)
+material = SubResource("StandardMaterial3D_s8rav")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="SubViewportContainer/SubViewport/Body/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.654478, 0.274, -0.0949232)
+size = Vector3(0.05, 0.05, 0.05)
+material = SubResource("StandardMaterial3D_s8rav")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="SubViewportContainer/SubViewport/Body/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.691359, 0.17286, -0.0188542)
+size = Vector3(0.05, 0.0475952, 0.224707)
+material = SubResource("StandardMaterial3D_s8rav")
+
+[node name="Helmet" type="CSGSphere3D" parent="SubViewportContainer/SubViewport/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.464266, 0.1788, 0)
+radius = 0.388067
+radial_segments = 16
+rings = 12
+material = SubResource("StandardMaterial3D_dtgnj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_sjci2")
+text = "Ovium
+"
+label_settings = SubResource("LabelSettings_vai8v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Play" type="Button" parent="VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_sjci2")
+text = "Play"
+
+[node name="Quit" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_sjci2")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
