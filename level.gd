@@ -4,8 +4,9 @@ var character_scene := preload("res://character.tscn")
 @onready var player_root := $Players
 @onready var body_root := $Bodies
 @onready var cows := $Bodies/Cows
-@onready var cowScene := preload("res://cow.tscn")
+@onready var cow_scene := preload("res://cow.tscn")
 @onready var aliens := $Bodies/Aliens
+@onready var alien_spawners := $AlienSpawners
 
 @onready var planets: Node3D = $Planets
 
@@ -103,9 +104,9 @@ func spawn_sheep(n: int):
 									   planet.radius * sin(theta) * sin(phi),
 									   planet.radius * cos(theta))
 				var position = planet.position + offset
-				var newCow := cowScene.instantiate()
-				newCow.position = position
-				cows.add_child(newCow)
+				var new_cow := cow_scene.instantiate()
+				new_cow.position = position
+				cows.add_child(new_cow)
 
 func _ready():
 	var character = character_scene.instantiate()
@@ -121,6 +122,22 @@ func _ready():
 				body.get_gravity = get_gravity
 				body.get_closest_body = get_closest_body
 				
-	for alien in aliens.get_children():
-		alien.get_closest_target = get_closest_target
-		alien.get_swarm_velocity = get_swarm_velocity
+	for spawner in alien_spawners.get_children():
+		spawner.spawn_root = aliens
+		spawner.spawn_hook = _prepare_alien
+			
+
+func _prepare_alien(alien):
+	alien.get_closest_target = get_closest_target
+	alien.get_swarm_velocity = get_swarm_velocity
+	alien.get_closest_body = get_closest_body
+	alien.rotation.x = randf()
+	alien.rotation.y = randf()
+	alien.rotation.z = randf()
+
+func _on_alien_spawn_timer_timeout():
+	if aliens.get_child_count() < 50:
+		var spawner_index := randi_range(0, alien_spawners.get_child_count() - 1)
+		var spawn_amount := randi_range(10, 20)
+		var alien_spawner := alien_spawners.get_child(spawner_index)
+		alien_spawner.spawn(spawn_amount)
